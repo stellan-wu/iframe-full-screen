@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Iframe full screen</title>
+    <style>
+        img {
+            width: 100%;
+        }
+        button {
+            width: 200px;
+            height: 60px;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="https://media-preview.contentapi.ea.com/content/dam/eacom/en-us/common/ea-hero-md-play-steam-xl-7x2.jpg.adapt.1920w.jpg" alt="">
+    </div>
+    <button>Full Screen</button>
+    <script>
+        const button = document.querySelector('button');
+        const img = document.querySelector('img');
+
+        button.onclick = () => {
+            if (img.requestFullscreen) {
+                img.requestFullscreen();
+            } else if (img.webkitRequestFullscreen) {
+                img.webkitRequestFullscreen();
+            }
+        }
+    </script>
+</body>
+</html>
